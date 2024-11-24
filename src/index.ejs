@@ -28,17 +28,7 @@
   <!-- Add your organization's prod import map URL to this script's src  -->
   <!-- <script type="injector-importmap" src="/importmap.json"></script> -->
 
-  <% if (isLocal) { %>
-  <script type="injector-importmap">
-    {
-      "imports": {
-        "@pickme/root-config": "//localhost:9000/pickme-root-config.js",
-        "@pickme/navbar": "//localhost:4101/mfa.js",
-        "@pickme/records-page": "//localhost:4102/mfa.js"
-      }
-    }
-  </script>
-  <% } %>
+  <script type="injector-importmap" src="https://pickme-import-maps.s3.ap-northeast-2.amazonaws.com/import-map.json"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@4.1.0/dist/import-map-overrides.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@single-spa/import-map-injector@1.1.0/lib/import-map-injector.js"></script>
