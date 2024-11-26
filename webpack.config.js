@@ -1,6 +1,9 @@
 const { merge } = require("webpack-merge");
 const singleSpaDefaults = require("webpack-config-single-spa-ts");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 module.exports = (webpackConfigEnv, argv) => {
   const orgName = "pickme";
@@ -21,6 +24,7 @@ module.exports = (webpackConfigEnv, argv) => {
         templateParameters: {
           isLocal: webpackConfigEnv && webpackConfigEnv.isLocal,
           orgName,
+          importMapPath: process.env.IMPORT_MAPS_URL,
         },
       }),
     ],
