@@ -30,6 +30,18 @@
   <!-- <script type="injector-importmap" src="/importmap.json"></script> -->
 
   <script type="injector-importmap" src="<%= importMapPath %>"></script>
+  
+  <% if (isLocal) { %>
+    <script type="injector-importmap">
+      {
+        "imports": {
+          "@pickme/root-config": "//localhost:9000/pickme-root-config.js",
+          "@pickme/nav": "//localhost:4101/application.js",
+          "@pickme/records": "//localhost:4102/application.js"
+        }
+      }
+    </script>
+  <% } %>
 
   <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@4.1.0/dist/import-map-overrides.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@single-spa/import-map-injector@1.1.0/lib/import-map-injector.js"></script>
@@ -38,7 +50,6 @@
   <noscript>
     You need to enable JavaScript to run this app.
   </noscript>
-  <main></main>
   <script>
     window.importMapInjector.initPromise.then(() => {
       import('@pickme/root-config');
