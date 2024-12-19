@@ -24,7 +24,14 @@
     }
   </script>
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@6.0.3/lib/es2015/esm/single-spa.min.js" as="module">
+
+  <!-- Svelte Material UI 기본 스타일 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/svelte-material-ui@7.0.0/bare.min.css" />
+
+  <!-- Quasar 기본 스타일 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quasar@2.15.1/dist/quasar.min.css">
+  <!-- Quasar 아이콘 세트 (material-icons) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@quasar/extras/material-icons/material-icons.css">
 
   <!-- Add your organization's prod import map URL to this script's src  -->
   <!-- <script type="injector-importmap" src="/importmap.json"></script> -->
@@ -37,7 +44,8 @@
         "imports": {
           "@pickme/root-config": "//localhost:9000/pickme-root-config.js",
           "@pickme/nav": "//localhost:4101/application.js",
-          "@pickme/records": "//localhost:4102/application.js"
+          "@pickme/records": "//localhost:4102/records/application.js",
+          "@pickme/reports": "//localhost:4103/reports/application.js"
         }
       }
     </script>
