@@ -1,13 +1,16 @@
 <single-spa-router>
-  <nav>
+  <nav style="position: relative; z-index: 9999;">
     <application name="@pickme/nav"></application>
   </nav>
   <main>
-    <route path="records">
-      <application name="@pickme/records"></application>
+    <route path="record">
+      <application name="@pickme/record"></application>
     </route>
-    <route path="reports">
-      <application name="@pickme/reports"></application>
+    <route path="report">
+      <application name="@pickme/report"></application>
+    </route>
+    <route path="review">
+      <application name="@pickme/review"></application>
     </route>
   </main>
 </single-spa-router>
