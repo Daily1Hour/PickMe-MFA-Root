@@ -2,6 +2,7 @@ const path = require("path");
 const { merge } = require("webpack-merge");
 const singleSpaDefaults = require("webpack-config-single-spa-ts");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const dotenv = require("dotenv");
 
 dotenv.config();
@@ -27,6 +28,11 @@ module.exports = (webpackConfigEnv, argv) => {
           orgName,
           importMapPath: process.env.IMPORT_MAPS_URL,
         },
+      }),
+      new CopyWebpackPlugin({
+        patterns: [
+          { from: "public", to: "" }, // public 폴더 내 정적 파일 복사
+        ],
       }),
     ],
     devServer: {
