@@ -9,7 +9,7 @@
         content="default-src 'self' https: localhost:*; 
                 script-src 'unsafe-inline' 'unsafe-eval' https: localhost:*; 
                 connect-src https: localhost:* ws://localhost:*; 
-                style-src 'unsafe-inline' https:; 
+                style-src 'unsafe-inline' https: localhost:*; 
                 object-src 'none'; 
                 worker-src 'self' https: localhost:*;">
   <meta name="importmap-type" use-injector />
@@ -49,6 +49,7 @@
       {
         "imports": {
           "@pickme/root-config": "//localhost:9000/pickme-root-config.js",
+          "@pickme/style-guide": "//localhost:9001/pickme-style-guide.js",
           "@pickme/nav": "//localhost:4101/nav/application.js",
           "@pickme/record": "//localhost:4102/record/application.js",
           "@pickme/report": "//localhost:4103/report/application.js",
@@ -71,6 +72,8 @@
   <script>
     window.importMapInjector.initPromise.then(() => {
       import('@pickme/root-config');
+
+      import('@pickme/style-guide').then(module => module.get('./global'));
     });
   </script>
   <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
