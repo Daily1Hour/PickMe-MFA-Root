@@ -32,7 +32,7 @@ flowchart BT
     click Chat "https://github.com/Daily1Hour/PickMe-Chat-Application"
 
     subgraph info[<화살표 안내>]
-        style info fill:#F1F1F1,stroke-width:0px
+        style info fill:#FAFAFA,stroke:#9F9F9F,stroke-width:1px
         direction BT
         A ==Single-SPA mount==> B
         A --Single-SPA utility--> C
@@ -108,3 +108,7 @@ flowchart BT
 - Auth는 각 애플리케이션들에 유틸리티로써 동적 호출됨.
 - Style-Guide는 MFA-Root에 스타일 제공을 위해 Module Federation으로 동적 호출됨.
 - Style-Guide는 각 애플리케이션에 공유 컴포넌트 제공을 위해 Module Federation으로 동적 호출됨.
+
+## 배포
+
+![fe](https://github.com/user-attachments/assets/8986df40-26e4-4cdf-8d4d-1ad97b4f5f1b)
