@@ -1,11 +1,13 @@
 <single-spa-router>
-  <nav style="position: relative;">
+  <nav style="position: relative">
     <application name="@pickme/nav"></application>
   </nav>
 
   <application name="@pickme/reminder"></application>
 
-  <application name="@pickme/chat"></application>
+  <div style="position: absolute; z-index: 999;">
+    <application name="@pickme/chat"></application>
+  </div>
 
   <main>
     <route path="record">
