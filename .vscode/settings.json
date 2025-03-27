@@ -1,0 +1,10 @@
+{
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        ".env": ".env.*",
+        "setup.ps1": "setup.*, .gitconfig, .gitmessage",
+        "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, amplify.yml",
+        "webpack.config.js": "webpack.*, tsconfig.*, babel.*",
+        ".eslintrc": ".eslint*, eslint*, .prettier*, prettier*, .gitignore, .npmignore, .editorconfig",
+    }
+}

@@ -39,5 +39,8 @@ module.exports = (webpackConfigEnv, argv) => {
       static: path.resolve(__dirname, "public"), // public 폴더 내 정적 파일 제공
       hot: true,
     },
+    output: {
+      chunkFormat: "array-push", // 번들을 배열로 푸시하여 처리
+    },
   });
 };
